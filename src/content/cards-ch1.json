@@ -1,0 +1,1610 @@
+[
+ {
+  "id": "1.01",
+  "title": "Too tired to brush",
+  "area": "health",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "It's late, you're already in bed, and your teeth feel fine.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Skip brushing, just this once.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Get up and brush for two minutes.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "health": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "Your gums feel sore at breakfast.",
+   "disaster": "A toothache, then a filling at the dentist, and a 50-coin bill.",
+   "good": "The dentist says your teeth are looking great.",
+   "lucky": "No fillings again. The dentist gives you a sticker and a new toothbrush.",
+   "why": "Two minutes a night adds up to strong teeth for life."
+  }
+ },
+ {
+  "id": "1.02",
+  "title": "One more video",
+  "area": "health",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "It's devices-off time, and the next video has already started playing.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Watch just one more, then another.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Turn it off and read in bed.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "health": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "You yawn all the way through maths.",
+   "disaster": "You're so tired you trip in the playground and sprain your wrist.",
+   "good": "You wake up before your alarm, full of energy.",
+   "lucky": "Best sleep ever. You win your race at sport.",
+   "why": "Screens off early means better sleep, and sleep powers everything else."
+  }
+ },
+ {
+  "id": "1.03",
+  "title": "Rainy training",
+  "area": "health",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "It's drizzling and tennis starts in 20 minutes. The couch looks very comfy.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Stay home and play video games.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Grab a jacket and go.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "health": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "Your serve is rusty at the next match.",
+   "disaster": "You miss so much training that you're dropped from the team.",
+   "good": "Only three kids turn up, so you get extra coaching.",
+   "lucky": "The coach notices your effort and makes you captain for the day.",
+   "why": "Showing up when it's hard is how you get good."
+  }
+ },
+ {
+  "id": "1.04",
+  "title": "Swim between the flags",
+  "area": "health",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "At the beach, your friends want to swim near the rocks, where there are no lifeguards.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Go with your friends to the rocks.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Swim between the red and yellow flags.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "health": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "A wave knocks you over and you scrape your knee.",
+   "disaster": "The water pulls you away from the shore. A lifeguard paddles out on a board to bring you back. You're safe, but very shaken.",
+   "good": "The lifeguards run a bodyboard race, and you're right there to join in.",
+   "lucky": "You catch the best wave of the day all the way to the sand.",
+   "why": "The flags mark the safest water. Smart swimmers always use them."
+  }
+ },
+ {
+  "id": "1.05",
+  "title": "Carnival day",
+  "area": "health",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "It's a hot, sunny athletics carnival. Your hat is in your bag, and none of your friends are wearing one.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Leave the hat in your bag so you fit in.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Hat on, sunscreen on.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "health": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "A sunburnt nose and shoulders. Ouch.",
+   "disaster": "Bad sunburn and too much heat. You spend the afternoon in sick bay and miss your races.",
+   "good": "You stay cool and run a personal best.",
+   "lucky": "You win a ribbon in the long jump.",
+   "why": "Slip, slop, slap. Looking after your skin today looks after it for life."
+  }
+ },
+ {
+  "id": "1.06",
+  "title": "Just around the corner",
+  "area": "health",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "Your friend lives just around the corner. Your bike helmet is in the garage, and it squashes your hair.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Ride without it. It's not far.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Helmet on, every ride.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "health": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "You wobble off the kerb and graze your elbow.",
+   "disaster": "You hit a pothole, fall and bump your head. Mum takes you to hospital to get checked.",
+   "good": "You and your friend ride to the park and back with no dramas.",
+   "lucky": "A police officer at the park gives you a free ice-cream voucher for riding safely.",
+   "why": "A helmet only works if it's on your head."
+  }
+ },
+ {
+  "id": "1.07",
+  "title": "Snack attack",
+  "area": "health",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "You're starving after school. There are chips and soft drink in the cupboard, and fruit and yoghurt in the fridge.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Chips and soft drink.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "M",
+    "text": "A handful of chips with an apple.",
+    "tone": "middle",
+    "now": null,
+    "later": {
+     "coins": 8,
+     "xp": 12,
+     "stats": {
+      "health": 1
+     },
+     "text": ""
+    }
+   },
+   {
+    "key": "B",
+    "text": "Fruit, yoghurt and a glass of water.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "health": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "An hour later you feel tired and cranky.",
+   "disaster": "A tummy ache and no energy. You lose your tennis match 6-0.",
+   "good": "Full of energy, you finish a whole building set in one go.",
+   "lucky": "You feel great and beat your own record around the block.",
+   "why": "Food is fuel. Better fuel, better day."
+  }
+ },
+ {
+  "id": "1.08",
+  "title": "Rep team trials",
+  "area": "health",
+  "kind": "door",
+  "needs": {
+   "stat": "health",
+   "value": 60
+  },
+  "scene": "Trials for the district tennis team are on Saturday. Only fit, well-practised players get picked.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Skip trials this year.",
+    "tone": "tempting",
+    "now": {
+     "coins": 0,
+     "xp": 0,
+     "stats": {},
+     "text": "a free Saturday"
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Go to the trials.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "health": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "normal": "Close, but not picked. The coach says to come back next season.",
+   "good": "Picked as a reserve. Rep team cards unlock.",
+   "lucky": "Picked for the team, and your character gets the team shirt.",
+   "why": "Big chances go to people who've been getting ready all along."
+  }
+ },
+ {
+  "id": "1.09",
+  "title": "A new dojo",
+  "area": "health",
+  "kind": "real",
+  "needs": null,
+  "scene": "Mum and Dad found a martial arts class near home. It's two sessions a week, starting as a white belt.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Not now. Stay home and play video games.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Sign up and commit to the term.",
+    "tone": "right",
+    "now": {
+     "coins": 0,
+     "xp": 50,
+     "stats": {},
+     "text": "the White Belt badge"
+    },
+    "later": {
+     "coins": 15,
+     "xp": 0,
+     "stats": {},
+     "text": "a 150 XP Seed after your first four classes, the Martial arts habit unlocks"
+    }
+   }
+  ],
+  "outcomes": {
+   "good": "The instructor says you're a natural.",
+   "lucky": "You're picked to help show the class a new move.",
+   "ifA": "No risk token. The card comes back next week with a 30 XP bonus, and Mum and Dad get a note.",
+   "why": "Every black belt was once a white belt who said yes."
+  }
+ },
+ {
+  "id": "1.10",
+  "title": "Spelling test tomorrow",
+  "area": "brains",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "There's a spelling test tomorrow, and your friends are online right now.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Play online all afternoon.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Practise your words for 15 minutes, then play.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "brains": 2
+     },
+     "text": "",
+     "seed": "a test bonus on Friday"
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "9 out of 20. Your teacher looks disappointed.",
+   "disaster": "3 out of 20. You redo the test at lunch while everyone else plays.",
+   "good": "18 out of 20 and a stamp in your book.",
+   "lucky": "20 out of 20. You're Spelling Star of the week.",
+   "why": "Fifteen minutes now beats an hour of worry later."
+  }
+ },
+ {
+  "id": "1.11",
+  "title": "Piano or cartoons",
+  "area": "brains",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "Your favourite show starts in ten minutes. You haven't done piano practice yet.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Watch the show and skip piano today.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Ten minutes of piano first, then the show.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "brains": 2
+     },
+     "text": "",
+     "seed": "after five practices, a recital card unlocks"
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "Your piano teacher can tell you didn't practise.",
+   "disaster": "You forget your piece in front of the class and have to start again.",
+   "good": "The tricky bit finally clicks.",
+   "lucky": "Your teacher gives you a harder, cooler piece to learn.",
+   "why": "Ten minutes a day beats an hour once a week."
+  }
+ },
+ {
+  "id": "1.12",
+  "title": "Stuck on homework",
+  "area": "brains",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "Your maths homework makes no sense, and it's due tomorrow.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Scribble any answers so it looks done.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Ask Mum or Dad to explain it.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "brains": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "Every answer comes back marked wrong.",
+   "disaster": "Your teacher keeps you in at lunch to redo it all.",
+   "good": "Once Dad explains it, it seems easy.",
+   "lucky": "You understand it so well that you help a friend the next day.",
+   "why": "Asking for help is what smart people do."
+  }
+ },
+ {
+  "id": "1.13",
+  "title": "Hand up or head down",
+  "area": "brains",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "Your teacher is explaining fractions, and you're lost. Everyone else seems to get it.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Stay quiet and hope it makes sense later.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Put your hand up and ask.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "brains": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "Your homework is all fractions, and you're still lost.",
+   "disaster": "You fail the fractions quiz, and the next topic builds on it.",
+   "good": "Three other kids say they were lost too. Your question helped everyone.",
+   "lucky": "Your teacher gives you a fractions game to play at home.",
+   "why": "One question now saves weeks of being confused."
+  }
+ },
+ {
+  "id": "1.14",
+  "title": "Chapter or screen",
+  "area": "brains",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "It's reading time. Your book is on the shelf, and the tablet is next to you.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Scroll videos instead.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "M",
+    "text": "Read half a chapter, then five minutes of videos.",
+    "tone": "middle",
+    "now": null,
+    "later": {
+     "coins": 8,
+     "xp": 12,
+     "stats": {
+      "brains": 1
+     },
+     "text": ""
+    }
+   },
+   {
+    "key": "B",
+    "text": "Read a chapter of your book.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "brains": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "You can't remember a single video you watched.",
+   "disaster": "Your book is due back at the library, and you haven't read any of it. You miss the class book chat.",
+   "good": "The story gets exciting and you can't put it down.",
+   "lucky": "Your teacher picks your book review for the class newsletter.",
+   "why": "Every book makes your brain a little bigger."
+  }
+ },
+ {
+  "id": "1.15",
+  "title": "Strange beetle",
+  "area": "brains",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "You find a shiny beetle you've never seen before in the backyard.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Ignore it and go back to your game.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Look it up and start a bug journal.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "brains": 2
+     },
+     "text": "",
+     "seed": "the bug journal counts toward the science fair"
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "You never find out what it was.",
+   "disaster": "Your friend finds the same beetle and becomes the class bug expert instead of you.",
+   "good": "It's a rare jewel beetle. You draw it in your journal.",
+   "lucky": "A scientist on a nature website replies to your photo and thanks you.",
+   "why": "Curious people notice things others walk past."
+  }
+ },
+ {
+  "id": "1.16",
+  "title": "Space or pranks",
+  "area": "brains",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "There's a new documentary about the planets. Your friends are watching prank videos.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Watch prank videos with your friends.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Watch the space documentary.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "brains": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "You can't answer the bonus question in class about Saturn's rings.",
+   "disaster": "You copy a prank from a video and break the school tap. A note goes home.",
+   "good": "You learn that a day on Venus is longer than its year.",
+   "lucky": "Your teacher lets you present a space fact to the class.",
+   "why": "What you watch fills your head. Choose good stuff."
+  }
+ },
+ {
+  "id": "1.17",
+  "title": "The bridge that fell",
+  "area": "brains",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "Your building-set bridge collapses the moment you put a toy car on it.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Throw it in the box and give up.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Work out why it fell and build it stronger.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "brains": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "The box sits there unfinished for weeks.",
+   "disaster": "You give up on building sets altogether and miss the engineering club.",
+   "good": "Triangles! Your new bridge holds three cars.",
+   "lucky": "Your bridge holds a full water bottle. Dad takes a photo for the family chat.",
+   "why": "Mistakes are how engineers learn."
+  }
+ },
+ {
+  "id": "1.18",
+  "title": "Science fair",
+  "area": "brains",
+  "kind": "door",
+  "needs": {
+   "stat": "brains",
+   "value": 60
+  },
+  "scene": "The school science fair is in three weeks. Entries need a real experiment.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Skip it this year.",
+    "tone": "tempting",
+    "now": {
+     "coins": 0,
+     "xp": 0,
+     "stats": {},
+     "text": "free afternoons"
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Enter with an experiment.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "brains": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "normal": "A good project, but no prize. The judge gives you tips for next year.",
+   "good": "Highly commended. Science club cards unlock.",
+   "lucky": "First prize, and your character gets a lab coat.",
+   "why": "Everything you've learned adds up to moments like this."
+  }
+ },
+ {
+  "id": "1.19",
+  "title": "Birthday money",
+  "area": "money",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "Grandma gave you $20 for your birthday. A new outfit for your game character costs exactly $20.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Spend it all on the outfit.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "M",
+    "text": "Spend $5 and bank $15.",
+    "tone": "middle",
+    "now": null,
+    "later": {
+     "coins": 8,
+     "xp": 12,
+     "stats": {
+      "money": 1
+     },
+     "text": ""
+    }
+   },
+   {
+    "key": "B",
+    "text": "Put it in the bank towards a new bike.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "money": 2
+     },
+     "text": "",
+     "seed": "interest on Sunday"
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "A week later the outfit is boring, and the money's gone. -30 coins.",
+   "disaster": "The school excursion needs $20 and you have nothing left. You miss out. -100 coins.",
+   "good": "Your bank balance earns its first interest.",
+   "lucky": "Grandma is so proud you saved that she adds $10 more.",
+   "why": "Money you save keeps working for you. Money you spend is gone."
+  }
+ },
+ {
+  "id": "1.20",
+  "title": "Mystery box",
+  "area": "money",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "Your game sells mystery boxes. One might hold a super-rare skin, but most hold junk.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Buy three boxes and hope.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Save for the exact skin you actually want.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "money": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "Three boxes, three pieces of junk. -30 coins.",
+   "disaster": "You keep buying \"just one more\" until all your savings are gone. -100 coins.",
+   "good": "You buy the skin you wanted, and it's on sale.",
+   "lucky": "The game gives away the skin free to players who saved up.",
+   "why": "Mystery boxes are built so most people lose. Choose what you're buying."
+  }
+ },
+ {
+  "id": "1.21",
+  "title": "Three jars",
+  "area": "money",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "It's pocket money day. Dad shows you three jars: Spend, Save and Share.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Put it all in Spend and head to the shop.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Split it between the three jars.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "money": 2
+     },
+     "text": "",
+     "seed": "the Save jar grows each week"
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "By Wednesday the money is gone, and so are the lollies. -30 coins.",
+   "disaster": "Your friend's birthday is on Saturday, and you can't afford a present. -100 coins.",
+   "good": "Your Save jar is fuller than you expected.",
+   "lucky": "Your Share jar buys a toy for the school charity drive, and you get a thank-you card.",
+   "why": "A plan for your money means you're never caught short."
+  }
+ },
+ {
+  "id": "1.22",
+  "title": "Let it grow",
+  "area": "money",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "You have 300 coins. The bank pays interest every Sunday if you leave them there.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Spend them on decorations for your room now.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Leave them in the bank for a month.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "money": 2
+     },
+     "text": "",
+     "seed": "a month of interest"
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "The decorations look great, but nothing grows. -30 coins.",
+   "disaster": "You spend it all, and then the bike you wanted goes on sale. You can't buy it. -100 coins.",
+   "good": "After four Sundays, your 300 coins are 324.",
+   "lucky": "The bank runs a bonus month, and your interest doubles.",
+   "why": "Interest is money that money earns while you sleep."
+  }
+ },
+ {
+  "id": "1.23",
+  "title": "Lemonade stand",
+  "area": "money",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "It's going to be hot on Saturday. You could sell lemonade outside the house.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Sleep in and play games all morning.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Make lemonade and a sign, and set up the stand.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "money": 2
+     },
+     "text": "",
+     "seed": "+60 coins on Sunday"
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "The kid next door sets up a stand instead and makes the money. -30 coins.",
+   "disaster": "You're bored all weekend and spend your pocket money on drinks at the shop. -100 coins.",
+   "good": "You sell out by lunchtime.",
+   "lucky": "A neighbour orders lemonade for her whole party.",
+   "why": "Earning money takes effort, and it feels great."
+  }
+ },
+ {
+  "id": "1.24",
+  "title": "Same toy, cheaper",
+  "area": "money",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "The toy you want is $40 here. Mum says the same toy is $25 at another shop across town.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Buy it here, right now.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Wait until Saturday and buy it at the cheaper shop.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "money": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "You find the same toy cheaper the next day. -30 coins.",
+   "disaster": "You spent so much that there's nothing left for the movies with your friends. -100 coins.",
+   "good": "You save $15 and buy a book with the change.",
+   "lucky": "The cheaper shop has a sale. You get it for $20.",
+   "why": "Checking prices first means more money for other things."
+  }
+ },
+ {
+  "id": "1.25",
+  "title": "Halfway to the bike",
+  "area": "money",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "You're halfway to saving for a new bike. A cool toy is on sale at the shops.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Buy the toy. The bike can wait.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Walk past the toy and keep saving.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "money": 2
+     },
+     "text": "",
+     "seed": "the bike arrives sooner"
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "The toy breaks in a week. -30 coins.",
+   "disaster": "Summer comes, your friends are riding new bikes, and you're back to the start. -100 coins.",
+   "good": "You reach three-quarters of your goal.",
+   "lucky": "The bike shop has a sale. You can buy it this weekend.",
+   "why": "Small wants can steal your big goals."
+  }
+ },
+ {
+  "id": "1.26",
+  "title": "Wash the car",
+  "area": "money",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "Dad offers 50 coins if you wash the car this afternoon. Your game is calling.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Say no and keep playing.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Wash the car properly, wheels and all.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "money": 2
+     },
+     "text": "",
+     "seed": "+50 coins"
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "Your friend down the street washes your dad's car instead. -30 coins.",
+   "disaster": "You need money for the school disco and there's none left. You miss it. -100 coins.",
+   "good": "Dad is so pleased he asks you to do it every month.",
+   "lucky": "The neighbours see your work and ask you to wash their car too.",
+   "why": "Hard work today is money in your pocket tomorrow."
+  }
+ },
+ {
+  "id": "1.27",
+  "title": "Mum's card",
+  "area": "money",
+  "kind": "temptation",
+  "needs": null,
+  "scene": "A game on Mum's tablet says \"Buy 500 gems now!\" Mum's card is saved, and she's in the shower.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Tap Buy. She'll never notice.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Close the game and ask Mum later.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "money": 2,
+      "heart": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "Mum gets an email receipt within a minute. No game time for a week. -30 coins.",
+   "disaster": "You buy gems five times before Mum's bank calls her. You must pay it back from your savings. Mum and Dad are very disappointed. -200 coins.",
+   "good": "Mum says yes to a small gem pack, because you asked.",
+   "lucky": "Mum is so impressed you asked that she shows you how to earn gems free in the game.",
+   "why": "Money that isn't yours is never yours to spend."
+  }
+ },
+ {
+  "id": "1.28",
+  "title": "Quiz answers",
+  "area": "heart",
+  "kind": "temptation",
+  "needs": null,
+  "scene": "Your friend shows you the answers to tomorrow's quiz. He got them from the teacher's desk.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Copy them.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Say no thanks and study yourself.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "heart": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "You get full marks but feel bad all day.",
+   "disaster": "The teacher spots identical answers. Zero marks, a note home, and Mum and Dad find out.",
+   "good": "You get 16 out of 20, all by yourself.",
+   "lucky": "The teacher changes the quiz at the last minute. You're ready and your friend isn't.",
+   "why": "Your marks should be yours. Cheating steals from you most."
+  }
+ },
+ {
+  "id": "1.29",
+  "title": "Chocolate dare",
+  "area": "heart",
+  "kind": "temptation",
+  "needs": null,
+  "scene": "Your mates dare you to take a chocolate from the corner shop without paying.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Take it. Everyone will laugh.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Say no and walk out.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "heart": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "The shopkeeper gives you a long, suspicious look every time you go in.",
+   "disaster": "You're caught. The shopkeeper bans you and calls home, and Mum and Dad come to collect you.",
+   "good": "One mate walks out with you. He didn't want to do it either.",
+   "lucky": "The shopkeeper saw you say no and gives you a free icy pole.",
+   "why": "Real friends don't dare you to do wrong."
+  }
+ },
+ {
+  "id": "1.30",
+  "title": "The broken mug",
+  "area": "heart",
+  "kind": "temptation",
+  "needs": null,
+  "scene": "You were throwing a ball inside and broke Mum's favourite mug. The dog is right there.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Say the dog knocked it over.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Tell Mum the truth and say sorry.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "heart": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "The dog gets sent outside, and you feel terrible.",
+   "disaster": "Mum finds the ball under the couch. Now it's about the lie, not the mug. No screens for a week.",
+   "good": "Mum is sad about the mug, but proud you told her.",
+   "lucky": "You use your own coins to buy Mum a new mug, and she uses it every day.",
+   "why": "Owning up is hard for a minute. Lying is hard for much longer."
+  }
+ },
+ {
+  "id": "1.31",
+  "title": "Dog's dinner",
+  "area": "heart",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "It's the dog's dinner time, but you're one level from beating your game.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Finish the level. The dog can wait.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Pause and feed the dog now.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "heart": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "The dog whines at the door until you're finally done.",
+   "disaster": "You forget completely. The dog gets into the bin and makes a huge mess you have to clean up.",
+   "good": "The dog licks your face, and you beat the level straight after.",
+   "lucky": "Dad sees you pause your game and gives you an extra half-hour on the weekend.",
+   "why": "Someone depends on you. That matters more than a game."
+  }
+ },
+ {
+  "id": "1.32",
+  "title": "The new kid",
+  "area": "heart",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "A new kid is sitting alone at lunch. Your friends are waving you over.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Go sit with your friends.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Invite the new kid to sit with your group.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "heart": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "The new kid sits alone all week.",
+   "disaster": "Later you find out the new kid felt so lonely they asked to change schools.",
+   "good": "The new kid knows heaps about space, just like you.",
+   "lucky": "The new kid becomes one of your best friends.",
+   "why": "Being kind costs nothing and can change someone's whole year."
+  }
+ },
+ {
+  "id": "1.33",
+  "title": "Dinner's ready",
+  "area": "heart",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "Dad calls out to set the table. You're right in the middle of a video.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Pretend you didn't hear.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Pause it and set the table.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "heart": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "Dad sets it himself and looks tired.",
+   "disaster": "Dad turns off the tablet. No more videos tonight.",
+   "good": "Dinner is your favourite, and you get first pick.",
+   "lucky": "Dad says, \"Thanks, mate. You choose Friday's movie.\"",
+   "why": "A family works when everyone pitches in."
+  }
+ },
+ {
+  "id": "1.34",
+  "title": "Ten dollars",
+  "area": "heart",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "You find $10 on the playground. Nobody saw you pick it up.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Keep it. Finders keepers.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Hand it in at the office.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "heart": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "You hear a little kid crying because she lost her canteen money.",
+   "disaster": "Someone did see you. Your teacher asks about it in front of the class.",
+   "good": "The little kid gets her money back and her mum thanks you.",
+   "lucky": "You get a Values Award at assembly.",
+   "why": "Honesty is what you do when nobody is watching."
+  }
+ },
+ {
+  "id": "1.35",
+  "title": "School captain",
+  "area": "heart",
+  "kind": "door",
+  "needs": {
+   "stat": "heart",
+   "value": 60
+  },
+  "scene": "Nominations are open for school captain. Teachers pick students who are kind, honest and reliable.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Don't nominate this year.",
+    "tone": "tempting",
+    "now": {
+     "coins": 0,
+     "xp": 0,
+     "stats": {},
+     "text": "no speech to give"
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Nominate and give a speech.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "heart": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "normal": "You're not picked, but your speech gets a big clap.",
+   "good": "You're made house captain. Leader cards unlock.",
+   "lucky": "You're school captain, and your character gets a captain's badge.",
+   "why": "People trust you with big jobs when you've done the small ones well."
+  }
+ },
+ {
+  "id": "1.36",
+  "title": "Laughing along",
+  "area": "heart",
+  "kind": "everyday",
+  "needs": null,
+  "scene": "Your friends are teasing a younger kid about his glasses. They look at you to join in.",
+  "options": [
+   {
+    "key": "A",
+    "text": "Laugh along so they don't tease you.",
+    "tone": "tempting",
+    "now": {
+     "coins": 10,
+     "xp": 0,
+     "stats": {},
+     "text": ""
+    },
+    "later": null
+   },
+   {
+    "key": "B",
+    "text": "Tell them to stop and walk over to the kid.",
+    "tone": "right",
+    "now": null,
+    "later": {
+     "coins": 15,
+     "xp": 25,
+     "stats": {
+      "heart": 2
+     },
+     "text": ""
+    }
+   }
+  ],
+  "outcomes": {
+   "setback": "The younger kid looks at you like you're one of them.",
+   "disaster": "A teacher sees the whole group. Everyone, including you, gets a note home.",
+   "good": "Your friends stop. One says sorry.",
+   "lucky": "The kid's big sister thanks you, and she's the captain of the soccer team.",
+   "why": "Standing up for someone takes courage. That's what real strength is."
+  }
+ }
+]
