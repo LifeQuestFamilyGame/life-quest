@@ -56,7 +56,7 @@ export function KidApp({ store, actions, pid, header }) {
   const [view, setView] = useState('play');
   const [toast, say] = useToast();
 
-  useEffect(() => { actions.ensurePlayers([pid]).then(() => actions.startDay(pid)).catch((e) => console.error(e)); }, [pid, date]);
+  useEffect(() => { actions.ensurePlayers([pid]).then(() => actions.applyFixes(pid)).then(() => actions.startDay(pid)).catch((e) => console.error(e)); }, [pid, date]);
 
   const ready = player && todayDoc !== undefined;
   const doc = todayDoc || {};

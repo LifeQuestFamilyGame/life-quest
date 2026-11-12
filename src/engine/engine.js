@@ -111,12 +111,46 @@ export function changeStat(p, stat, delta, date) {
 
 export function addRisk(p, stat) { p.risk[stat] = Math.min((p.risk[stat] || 0) + 1, 6); }
 
-// Three good choices in an area remove one risk token.
+// Every good choice in an area, and every check-in with that area's habits all done, heals one crack
+// (changed from one crack per three good choices on 12 Nov 2026).
 export function goodChoice(p, stat, date) {
   p.goodCount[stat] = (p.goodCount[stat] || 0) + 1;
   p.lastGood[stat] = date;
-  if (p.goodCount[stat] % 3 === 0 && p.risk[stat] > 0) { p.risk[stat] -= 1; return true; }
+  if (p.risk[stat] > 0) { p.risk[stat] -= 1; return true; }
   return false;
+}
+
+// One-off corrections to saved players. Each runs once per player and is recorded in player.fixes.
+// rescore-2026-11-12: the boys' first fortnight replayed with the same dice under the fairer crack rules.
+export const FIXES = [
+  {
+    id: 'rescore-2026-11-12',
+    startDate: '2026-11-01', // only the real family game, not practice players
+    players: {
+      kaelen: { stats: { health: 5, brains: 20, heart: 23 }, risk: { health: -4, heart: -2, brains: -2 }, xp: 10, coins: 50,
+        message: 'We made the game fairer! Your first two weeks were re-scored with the same dice rolls: Brains +20, Heart +23, Health +5, and the 50-koin library fine is refunded.' },
+      xavier: { stats: { heart: 11 }, risk: { brains: -1, heart: -1 }, xp: 10, coins: 0,
+        message: 'We made the game fairer! Your first two weeks were re-scored with the same dice rolls: Heart +11.' }
+    }
+  }
+];
+
+export function applyFixes(player, date) {
+  const p = clone(player);
+  const applied = [];
+  for (const fix of FIXES) {
+    const f = fix.players[p.id];
+    if (!f || (p.fixes || []).includes(fix.id)) continue;
+    if (fix.startDate && p.startDate !== fix.startDate) continue;
+    for (const [s, v] of Object.entries(f.stats || {})) p.stats[s] = R.clampStat((p.stats[s] ?? 40) + v);
+    for (const [s, v] of Object.entries(f.risk || {})) p.risk[s] = Math.max(0, Math.min(6, (p.risk[s] || 0) + v));
+    if (f.xp) p.xp += f.xp;
+    if (f.coins) { p.wallet += f.coins; p.week.items.push({ kind: 'fix', label: 'Re-score refund', amount: f.coins, date }); }
+    if (f.message) pushMsg(p, f.message, date);
+    p.fixes = [...(p.fixes || []), fix.id];
+    applied.push(fix.id);
+  }
+  return { player: p, applied };
 }
 
 // Stats fade by 1 point every 3 days with no good choice in that area.

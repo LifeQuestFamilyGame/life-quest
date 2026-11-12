@@ -29,7 +29,7 @@ export function ParentApp({ store, actions, me, header }) {
   const [busy, setBusy] = useState(false);
   const by = me.id === 'debora' ? 'Mum' : 'Dad';
 
-  useEffect(() => { actions.ensurePlayers(['jonathan', 'debora', 'kaelen', 'xavier']).catch(console.error); }, []);
+  useEffect(() => { actions.ensurePlayers(['jonathan', 'debora', 'kaelen', 'xavier']).then(() => Promise.all(KIDS.map((id) => actions.applyFixes(id)))).catch(console.error); }, []);
 
   if (players === undefined || claims === undefined) return <Loading />;
   const run = async (fn, msg) => {

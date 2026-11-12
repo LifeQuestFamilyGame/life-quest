@@ -130,6 +130,32 @@ describe('rolls', () => {
   });
 });
 
+describe('fairer cracks (12 Nov 2026)', () => {
+  it('caps cracks at -2 on a roll and heals one per good choice', () => {
+    expect(R.riskMod(5)).toBe(-2);
+    const p = E.newPlayer(KAELEN, '2026-11-02');
+    p.risk.heart = 3;
+    expect(E.goodChoice(p, 'heart', '2026-11-02')).toBe(true);
+    expect(p.risk.heart).toBe(2);
+  });
+  it('applies the re-score once, as changes on top of whatever the player has now', () => {
+    const p = E.newPlayer(KAELEN, '2026-11-01');
+    Object.assign(p.stats, { health: 30, brains: 19, heart: 25 });
+    Object.assign(p.risk, { health: 6, heart: 5, brains: 2 });
+    p.wallet = 157;
+    const once = E.applyFixes(p, '2026-11-13');
+    expect(once.applied).toEqual(['rescore-2026-11-12']);
+    expect(once.player.stats).toMatchObject({ health: 35, brains: 39, heart: 48, money: 40 });
+    expect(once.player.risk).toMatchObject({ health: 2, heart: 3, brains: 0 });
+    expect(once.player.wallet).toBe(207);
+    expect(once.player.messages[0].text).toMatch(/fairer/);
+    const twice = E.applyFixes(once.player, '2026-11-13');
+    expect(twice.applied).toEqual([]);
+    expect(twice.player.stats).toEqual(once.player.stats);
+    expect(E.applyFixes(E.newPlayer(KAELEN, '2026-11-20'), '2026-11-20').applied).toEqual([]);
+  });
+});
+
 describe('a perfect week', () => {
   it('earns roughly the designed koins and hits the cap', () => {
     let p = E.newPlayer(KAELEN, '2026-11-02');

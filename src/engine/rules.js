@@ -45,7 +45,8 @@ export function statMod(value) {
   if (value < 30) return -1;
   return 0;
 }
-export function riskMod(tokens) { return -Math.min(tokens || 0, 4); }
+// Each crack in a shield is -1 on rolls in that area, but never more than -2 in total (changed from -4 on 12 Nov 2026).
+export function riskMod(tokens) { return -Math.min(tokens || 0, 2); }
 
 // Roll two dice with a list of named modifiers.
 export function roll(mods, rng = Math.random, forced) {

@@ -7,7 +7,7 @@ import { CHECKUP } from '../../content/events.js';
 
 const KIND_LABELS = {
   habit: 'Habits Mum and Dad approved', sunday: 'Right choices, paid today', choice: 'Tempting choices (paid at the time)',
-  roll: 'Habit Roll luck', checkup: 'Check-up rolls', streak: 'Full streak week', food: 'Food Adventure', bonus: 'Bonuses', seed: 'Seeds'
+  roll: 'Habit Roll luck', checkup: 'Check-up rolls', streak: 'Full streak week', food: 'Food Adventure', bonus: 'Bonuses', seed: 'Seeds', fix: 'Re-score refund'
 };
 
 function breakdown(items) {

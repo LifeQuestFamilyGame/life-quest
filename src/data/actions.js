@@ -35,6 +35,17 @@ export function makeActions(store) {
       });
     },
 
+    // One-off corrections (see FIXES in the engine). Safe to call often: each fix runs once per player.
+    async applyFixes(pid) {
+      return T(async (tx) => {
+        const p0 = await tx.get(playerPath(pid));
+        if (!p0) return [];
+        const { player, applied } = E.applyFixes(p0, D.today());
+        if (applied.length) tx.set(playerPath(pid), player);
+        return applied;
+      });
+    },
+
     // Once a day: stats fade, seeds bloom.
     async startDay(pid) {
       return T(async (tx) => {
