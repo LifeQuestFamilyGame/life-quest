@@ -260,7 +260,7 @@ function BoySheet({ store, sheet, player, actions, run, busy, by, close }) {
   const date = D.today();
   const week = useWeekDocs(store, player.id, date);
   const [picked, setPicked] = useState([]);
-  const [bonus, setBonus] = useState({ xp: 20, coins: 0, note: '' });
+  const [bonus, setBonus] = useState({ xp: 20, coins: 0, note: '', stat: '', badge: '', both: false });
   const toggle = (id) => setPicked((x) => (x.includes(id) ? x.filter((y) => y !== id) : [...x, id]));
   let title, body, action;
   if (sheet.type === 'log') {
@@ -284,17 +284,25 @@ function BoySheet({ store, sheet, player, actions, run, busy, by, close }) {
       {rows.length ? rows.map((r) => <label key={r.d + r.id} className="row panel" style={{ minHeight: 52 }}><input type="radio" name="spot" checked={picked[0] === `${r.d}|${r.id}`} onChange={() => setPicked([`${r.d}|${r.id}`])} style={{ width: 24, height: 24 }} /><span className="grow">{HABIT_BY_ID[r.id]?.name}</span><span className="muted" style={{ fontSize: 14 }}>{r.d === date ? 'today' : 'yesterday'}</span></label>) : <p className="panel muted">No honour habits ticked today or yesterday.</p>}</>;
     action = () => run(() => { const [d, id] = picked[0].split('|'); return actions.spotCheck(player.id, d, id, by); }, 'Done. He will see a note.');
   } else {
-    title = `Give ${player.name} a bonus`;
+    title = bonus.both ? 'Give both boys a bonus' : `Give ${player.name} a bonus`;
     body = <>
-      <p className="muted">For something real, like helping his brother without being asked. Bonus koins count toward the weekly cap.</p>
-      <label className="field">What for?<input type="text" maxLength={100} value={bonus.note} onInput={(e) => setBonus({ ...bonus, note: e.currentTarget.value })} placeholder="Helped his brother without being asked" /></label>
+      <p className="muted">For something real, like helping his brother without being asked or a family skills day. Bonus koins count toward the weekly cap.</p>
+      <label className="field">What for?<input id="bonus-note" type="text" maxLength={100} value={bonus.note} onInput={(e) => setBonus({ ...bonus, note: e.currentTarget.value })} placeholder="Helped his brother without being asked" /></label>
       <div className="cols2">
-        <label className="field">XP<input type="number" min="0" max="500" value={bonus.xp} onInput={(e) => setBonus({ ...bonus, xp: Number(e.currentTarget.value) || 0 })} /></label>
-        <label className="field">Koins<input type="number" min="0" max="500" value={bonus.coins} onInput={(e) => setBonus({ ...bonus, coins: Number(e.currentTarget.value) || 0 })} /></label>
-      </div></>;
-    action = () => run(() => actions.bonus(player.id, { ...bonus, by }), 'Bonus sent');
+        <label className="field">XP<input id="bonus-xp" type="number" min="0" max="500" value={bonus.xp} onInput={(e) => setBonus({ ...bonus, xp: Number(e.currentTarget.value) || 0 })} /></label>
+        <label className="field">Koins<input id="bonus-coins" type="number" min="0" max="500" value={bonus.coins} onInput={(e) => setBonus({ ...bonus, coins: Number(e.currentTarget.value) || 0 })} /></label>
+      </div>
+      <label className="field">Also grow a stat (+2)
+        <select id="bonus-stat" value={bonus.stat} onChange={(e) => setBonus({ ...bonus, stat: e.currentTarget.value })}>
+          <option value="">No stat</option>
+          {STATS.map((s) => <option key={s} value={s}>{STAT_NAMES[s]}</option>)}
+        </select>
+      </label>
+      <label className="field">Badge (optional)<input id="bonus-badge" type="text" maxLength={30} value={bonus.badge} onInput={(e) => setBonus({ ...bonus, badge: e.currentTarget.value })} placeholder="Like Survival Scout" /></label>
+      <label className="row panel" style={{ minHeight: 52 }}><input id="bonus-both" type="checkbox" checked={bonus.both} onChange={(e) => setBonus({ ...bonus, both: e.currentTarget.checked })} style={{ width: 24, height: 24 }} /><span>Give the same bonus to both boys</span></label></>;
+    action = () => run(async () => { for (const id of (bonus.both ? KIDS : [player.id])) await actions.bonus(id, { ...bonus, by }); }, bonus.both ? 'Bonus sent to both boys' : 'Bonus sent');
   }
-  const canGo = sheet.type === 'bonus' ? (bonus.xp > 0 || bonus.coins > 0) && bonus.note.trim() : picked.length > 0;
+  const canGo = sheet.type === 'bonus' ? (bonus.xp > 0 || bonus.coins > 0 || bonus.stat || bonus.badge.trim()) && bonus.note.trim() : picked.length > 0;
   return (
     <div className="overlay" role="dialog" aria-modal="true" aria-label={title}>
       <div className="card stack">

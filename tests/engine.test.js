@@ -156,6 +156,18 @@ describe('fairer cracks (12 Nov 2026)', () => {
   });
 });
 
+describe('parent bonus', () => {
+  it('can add XP, koins, a stat and a badge', () => {
+    const p = E.newPlayer(KAELEN, '2026-11-01');
+    const r = E.giveBonus(p, { xp: 60, coins: 50, stat: 'health', badge: 'Survival Scout', note: 'Survival training', by: 'Dad', date: '2026-11-12' });
+    expect(r.player.xp).toBe(60);
+    expect(r.player.wallet).toBe(50);
+    expect(r.player.stats.health).toBe(42);
+    expect(r.player.badges).toContain('Survival Scout');
+    expect(r.player.messages[0].text).toBe('Dad: Survival training +60 XP, +50 koins, +2 Health, and the Survival Scout badge');
+  });
+});
+
 describe('a perfect week', () => {
   it('earns roughly the designed koins and hits the cap', () => {
     let p = E.newPlayer(KAELEN, '2026-11-02');

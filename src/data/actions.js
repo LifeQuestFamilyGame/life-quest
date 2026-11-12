@@ -311,10 +311,10 @@ export function makeActions(store) {
       });
     },
 
-    async bonus(pid, { xp, coins, note, by }) {
+    async bonus(pid, { xp, coins, stat, badge, note, by }) {
       return T(async (tx) => {
         const p0 = await tx.get(playerPath(pid));
-        const r = E.giveBonus(p0, { xp, coins, note, by, date: D.today() });
+        const r = E.giveBonus(p0, { xp, coins, stat: stat || null, badge, note, by, date: D.today() });
         tx.set(playerPath(pid), r.player);
         return r;
       });

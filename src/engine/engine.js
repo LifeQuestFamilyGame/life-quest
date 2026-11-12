@@ -757,12 +757,17 @@ export function spotCheck(player, doc, habitId, { by, date }) {
   return { player: p, doc: d };
 }
 
-export function giveBonus(player, { xp = 0, coins = 0, note, by, date }) {
+export function giveBonus(player, { xp = 0, coins = 0, stat = null, statBy = 2, badge = '', note, by, date }) {
   const p = clone(player);
   const gx = addXp(p, xp, { boost: false });
   const gc = earn(p, coins, 'bonus', note || 'Bonus', date);
-  pushMsg(p, `${by}: ${note || 'Bonus!'}${gx ? ` +${gx} XP` : ''}${gc ? ` +${gc} koins` : ''}`, date);
-  return { player: p, xp: gx, coins: gc };
+  const gs = stat ? changeStat(p, stat, statBy, date) : 0;
+  const b = (badge || '').trim();
+  const newBadge = b && !p.badges.includes(b);
+  if (newBadge) p.badges.push(b);
+  const bits = [gx ? `+${gx} XP` : '', gc ? `+${gc} koins` : '', gs ? `+${gs} ${STAT_NAMES[stat]}` : '', newBadge ? `and the ${b} badge` : ''].filter(Boolean);
+  pushMsg(p, `${by}: ${note || 'Bonus!'} ${bits.join(', ')}`.trim(), date);
+  return { player: p, xp: gx, coins: gc, stat: gs, badge: newBadge ? b : null };
 }
 
 export function queueCard(player, cardId, date) {
