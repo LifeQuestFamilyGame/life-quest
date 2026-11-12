@@ -26,7 +26,7 @@ function OptionChips({ opt, card }) {
 export function Choice({ player, cardRef, onChoose, busy, date }) {
   const [picked, setPicked] = useState(null);
   const card = CARD_BY_ID[cardRef.cardId];
-  const kindLabel = card.kind === 'temptation' ? 'Temptation' : card.kind === 'door' ? `A door: needs ${STAT_NAMES[card.needs.stat]} ${card.needs.value}` : card.kind === 'real' ? 'Real Choice from Mum and Dad' : `${STAT_NAMES[card.area]} choice`;
+  const kindLabel = card.kind === 'temptation' ? 'Temptation' : card.kind === 'door' ? `A door opened: your ${STAT_NAMES[card.needs.stat]} reached ${card.needs.value}` : card.kind === 'real' ? 'Real Choice from Mum and Dad' : `${STAT_NAMES[card.area]} choice`;
   return (
     <div className="split side-wide">
       <aside className="card stack" style={{ background: player.tint, alignItems: 'center', justifyContent: 'space-between' }}>

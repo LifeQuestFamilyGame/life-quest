@@ -106,6 +106,18 @@ describe('rolls', () => {
     expect(E.optionLocked(p, card, card.options.find((o) => o.key === 'B'))).toBe(true);
   });
 
+  it('Door cards are only dealt once the stat is high enough', () => {
+    const p = E.newPlayer(KAELEN, '2026-11-02');
+    for (let i = 0; i < 200; i++) expect(E.CARD_BY_ID[E.drawCard(p, '2026-11-02').cardId].kind).not.toBe('door');
+    p.stats.health = 60;
+    expect(E.drawCard(p, '2026-11-02').cardId).toBe('1.08');
+    const skip = E.makeChoice({ player: p, date: '2026-11-02', cardId: '1.08', key: 'A', forced: [3, 4] }).player;
+    expect(E.CARD_BY_ID[E.drawCard(skip, '2026-11-03').cardId].kind).not.toBe('door');
+    expect(E.drawCard(skip, '2026-11-09').cardId).toBe('1.08');
+    const go = E.makeChoice({ player: p, date: '2026-11-02', cardId: '1.08', key: 'B', forced: [3, 4] }).player;
+    expect(E.CARD_BY_ID[E.drawCard(go, '2026-11-20').cardId].id).not.toBe('1.08');
+  });
+
   it('The dojo card unlocks martial arts, or comes back next week', () => {
     const p = E.newPlayer(KAELEN, '2026-11-02');
     const yes = E.makeChoice({ player: p, date: '2026-11-02', cardId: '1.09', key: 'B', forced: [3, 4] });

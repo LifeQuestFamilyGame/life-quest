@@ -50,6 +50,7 @@ export class PracticeStore {
     return () => this.listeners.delete(fn);
   }
   async getDoc(path) { return clean(this.data[path] ?? null); }
+  async getQuery(coll, where = []) { return this.queryNow(coll, where); }
   async transact(fn) {
     const writes = [];
     const tx = {
@@ -100,6 +101,10 @@ export async function createFirebaseStore(config) {
       return fs.onSnapshot(q, (s) => cb(s.docs.map((d) => ({ id: d.id, ...d.data() }))), (e) => { console.error(e); cb([]); });
     },
     async getDoc(path) { const s = await fs.getDoc(ref(path)); return s.exists() ? s.data() : null; },
+    async getQuery(coll, where) {
+      const s = await fs.getDocs(fs.query(fs.collection(db, coll), ...toWhere(where || [])));
+      return s.docs.map((d) => ({ id: d.id, ...d.data() }));
+    },
     async transact(fn) {
       return fs.runTransaction(db, async (t) => {
         const tx = {

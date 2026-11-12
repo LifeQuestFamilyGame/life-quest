@@ -322,10 +322,20 @@ export function habitRoll(player, report, rng = Math.random, forced) {
 
 // ---------------------------------------------------------------------------
 // Story choices
+export function doorOpen(p, card) {
+  return card.kind !== 'door' || !card.needs || p.stats[card.needs.stat] >= card.needs.value;
+}
+
+// Door cards are only dealt once the player's stat is high enough. A door that has just
+// opened comes first. Saying "not this time" to an open door brings it back a week later.
 export function drawCard(p, date, rng = Math.random) {
   const queued = (p.deck.queue || []).find((q) => q.due <= date);
   if (queued) return { cardId: queued.cardId, bonusXp: queued.bonusXp || 0, queued: true };
-  const regular = CARDS.filter((c) => c.kind !== 'real');
+  const done = p.deck.doorsDone || [];
+  const retry = p.deck.doorRetry || {};
+  const door = CARDS.find((c) => c.kind === 'door' && !done.includes(c.id) && (!retry[c.id] || retry[c.id] <= date) && doorOpen(p, c));
+  if (door) return { cardId: door.id, bonusXp: 0, queued: false, door: true };
+  const regular = CARDS.filter((c) => c.kind !== 'real' && c.kind !== 'door');
   let pool = regular.filter((c) => !p.deck.seen.includes(c.id));
   if (!pool.length) pool = regular;
   return { cardId: R.pick(pool, rng).id, bonusXp: 0, queued: false };
@@ -420,6 +430,10 @@ export function makeChoice({ player, date, cardId, key, bonusXp = 0, rng = Math.
   // A card that was waiting in the queue has now been played (a re-queued dojo card is due next week).
   p.deck.queue = (p.deck.queue || []).filter((q) => !(q.cardId === card.id && q.due <= date));
   if (!p.deck.seen.includes(card.id)) p.deck.seen.push(card.id);
+  if (card.kind === 'door') {
+    if (opt.tone === 'right') p.deck.doorsDone = [...new Set([...(p.deck.doorsDone || []), card.id])];
+    else p.deck.doorRetry = { ...(p.deck.doorRetry || {}), [card.id]: D.addDays(date, 7) };
+  }
 
   // The Life Roll
   const mods = [];

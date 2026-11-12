@@ -202,7 +202,57 @@ function Boys({ store, players, actions, run, busy, by, setPlayAs }) {
         );
       })}
       {sheet && <BoySheet {...{ store, sheet, player: players[sheet.id], actions, run, busy, by, close: () => setSheet(null) }} />}
+      <ExportData store={store} />
     </>
+  );
+}
+
+// Lets a parent save the boys' game history as a file to share with Claude for a check-up.
+function ExportData({ store }) {
+  const [state, setState] = useState('idle');
+  const [text, setText] = useState('');
+  const build = async () => {
+    const [players, claims, requests, ...days] = await Promise.all([
+      store.getQuery('players', []), store.getQuery('claims', []), store.getQuery('requests', []),
+      ...KIDS.map((id) => store.getQuery('days', [['playerId', '==', id]]))
+    ]);
+    const data = {
+      exportedAt: new Date().toISOString(), today: D.today(),
+      players: players.map(({ loginHash, ...p }) => p),
+      days: days.flat().sort((a, b) => (a.playerId + a.date).localeCompare(b.playerId + b.date)),
+      claims, requests
+    };
+    return JSON.stringify(data);
+  };
+  const download = async () => {
+    setState('working');
+    try {
+      const json = await build();
+      setText(json);
+      const url = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
+      const a = document.createElement('a');
+      a.href = url; a.download = `life-quest-data-${D.today()}.json`;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 5000);
+      setState('saved');
+    } catch (e) { console.error(e); setState('error'); }
+  };
+  const copy = async () => {
+    try { await navigator.clipboard.writeText(text || (await build())); setState('copied'); } catch { setState('copyfail'); }
+  };
+  return (
+    <section className="card tight stack">
+      <h2 className="display" style={{ fontSize: 22 }}>Check-up with Claude</h2>
+      <p className="muted">Saves both boys' game history as a file. Attach it in your chat with Claude to get a progress review.</p>
+      <div className="row wrap" style={{ gap: 8 }}>
+        <button type="button" className="btn primary small" disabled={state === 'working'} onClick={download}>{state === 'working' ? 'Preparing…' : 'Download data file'}</button>
+        {(state === 'saved' || state === 'copied' || state === 'copyfail') && <button type="button" className="btn small" onClick={copy}>Copy instead</button>}
+      </div>
+      {state === 'saved' && <p className="panel" style={{ background: 'var(--leaf-soft)' }}>Saved to your Downloads as life-quest-data-{D.today()}.json.</p>}
+      {state === 'copied' && <p className="panel" style={{ background: 'var(--leaf-soft)' }}>Copied. Paste it into your chat with Claude.</p>}
+      {state === 'copyfail' && <p className="panel" style={{ background: 'var(--red-soft)' }}>Copying didn't work on this phone. Use the downloaded file instead.</p>}
+      {state === 'error' && <p className="panel" style={{ background: 'var(--red-soft)' }}>Couldn't read the game data. Check the internet and try again.</p>}
+    </section>
   );
 }
 
